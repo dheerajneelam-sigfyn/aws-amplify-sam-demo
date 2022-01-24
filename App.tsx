@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Button } from "react-native";
 import Amplify, { API } from "aws-amplify";
 
 export default function App() {
-  const apiName = "api6cc57f2f";
+  const apiName = "AmplifyBackEndTestAPI";
   const path = "/hello";
   const myInit = {
     headers: {},
@@ -13,9 +13,9 @@ export default function App() {
     API: {
       endpoints: [
         {
-          name: "api6cc57f2f",
+          name: "AmplifyBackEndTestAPI",
           endpoint:
-            "https://a1ktimx0vg.execute-api.ap-south-1.amazonaws.com/staging",
+            "https://iw01180879.execute-api.ap-south-1.amazonaws.com/staging",
         },
       ],
     },
@@ -46,7 +46,7 @@ export default function App() {
         <Button onPress={() => setClicked(0)} title="Reset" color="#841584" />
       </View>
       <View style={{ margin: 10 }}>
-        {showResult && <Text>Just a change : {apiMessage}</Text>}
+        {showResult && <Text>{apiMessage}</Text>}
       </View>
       <View style={{ margin: 10 }}>
         <Button

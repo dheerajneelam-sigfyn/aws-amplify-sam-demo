@@ -1,0 +1,26 @@
+version: 1
+backend:
+  phases:
+    build:
+      commands:
+        - amplifyPush --simple
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - nvm install 16.13.0
+        - nvm use 16.13.0
+        - npm install
+        - npm install --silent --global expo-cli
+        - expo install
+    build:
+      commands:
+        - 'expo build:web'
+  artifacts:
+    baseDirectory: web-build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - $(npm root --global)/**/*

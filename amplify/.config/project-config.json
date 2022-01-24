@@ -1,0 +1,17 @@
+{
+  "providers": [
+    "awscloudformation"
+  ],
+  "projectName": "awsamplifysamdemo",
+  "version": "3.1",
+  "frontend": "javascript",
+  "javascript": {
+    "framework": "react-native",
+    "config": {
+      "SourceDir": "./",
+      "DistributionDir": "/",
+      "BuildCommand": "expo build",
+      "StartCommand": "expo start"
+    }
+  }
+}
