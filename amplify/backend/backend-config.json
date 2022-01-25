@@ -4,6 +4,11 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "dashboardtestfunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "api": {
@@ -14,6 +19,14 @@
         {
           "category": "function",
           "resourceName": "AmplifyBackendTest",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "dashboardtestfunction",
           "attributes": [
             "Name",
             "Arn"

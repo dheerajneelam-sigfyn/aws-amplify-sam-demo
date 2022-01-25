@@ -7,6 +7,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/dashboard": {
+      "name": "/dashboard",
+      "lambdaFunction": "dashboardtestfunction",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

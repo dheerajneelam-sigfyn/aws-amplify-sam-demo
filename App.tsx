@@ -5,7 +5,8 @@ import Amplify, { API } from "aws-amplify";
 
 export default function App() {
   const apiName = "AmplifyBackEndTestAPI";
-  const path = "/hello";
+  const path1 = "/hello";
+  const path2 = "/dashboard";
   const myInit = {
     headers: {},
   };
@@ -24,9 +25,18 @@ export default function App() {
   const [apiMessage, setApiMessage]: any = useState();
   const [showResult, setShowResult] = useState(false);
   const getApiMessage = async () => {
-    API.get(apiName, path, myInit)
+    API.get(apiName, path1, myInit)
       .then((response: any) => {
-        console.log(response);
+        setApiMessage(response);
+        setShowResult(true);
+      })
+      .catch((error: any) => {
+        console.log(error.response);
+      });
+  };
+  const getDashboardMessage = async () => {
+    API.get(apiName, path2, myInit)
+      .then((response: any) => {
         setApiMessage(response);
         setShowResult(true);
       })
@@ -43,7 +53,14 @@ export default function App() {
       />
       <Text style={{ fontSize: 20, margin: 10 }}>{clicked}</Text>
       <View style={{ margin: 10 }}>
-        <Button onPress={() => setClicked(0)} title="Reset" color="#841584" />
+        <Button
+          onPress={() => {
+            setClicked(0);
+            setShowResult(false);
+          }}
+          title="Reset"
+          color="#841584"
+        />
       </View>
       <View style={{ margin: 10 }}>
         {showResult && <Text>{apiMessage}</Text>}
@@ -52,6 +69,13 @@ export default function App() {
         <Button
           onPress={() => getApiMessage()}
           title="Fetch Message"
+          color="#841584"
+        />
+      </View>
+      <View style={{ margin: 10 }}>
+        <Button
+          onPress={() => getDashboardMessage()}
+          title="Fetch Dashboard Message"
           color="#841584"
         />
       </View>
