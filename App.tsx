@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Button } from "react-native";
 import Amplify, { API } from "aws-amplify";
-
+import awsmobile from "./aws-exports";
 export default function App() {
   const apiName = "AmplifyBackEndTestAPI";
   const path1 = "/hello";
@@ -10,17 +10,7 @@ export default function App() {
   const myInit = {
     headers: {},
   };
-  Amplify.configure({
-    API: {
-      endpoints: [
-        {
-          name: "AmplifyBackEndTestAPI",
-          endpoint:
-            "https://iw01180879.execute-api.ap-south-1.amazonaws.com/staging",
-        },
-      ],
-    },
-  });
+  Amplify.configure(awsmobile);
   const [clicked, setClicked] = useState(0);
   const [apiMessage, setApiMessage]: any = useState();
   const [showResult, setShowResult] = useState(false);
