@@ -10,7 +10,7 @@
     "config": {
       "SourceDir": "./",
       "DistributionDir": "/",
-      "BuildCommand": "expo build",
+      "BuildCommand": "expo build:web",
       "StartCommand": "expo start"
     }
   }

@@ -1,6 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
     "function": {
-        "AmplifyBackendTest": {
+        "testfunction": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",
@@ -8,7 +8,7 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "api": {
-        "AmplifyBackEndTestAPI": {
+        "testgateway": {
             "RootUrl": "string",
             "ApiName": "string",
             "ApiId": "string"

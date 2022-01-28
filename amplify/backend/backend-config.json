@@ -1,32 +1,19 @@
 {
   "function": {
-    "AmplifyBackendTest": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "dashboardtestfunction": {
+    "testfunction": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
   },
   "api": {
-    "AmplifyBackEndTestAPI": {
+    "testgateway": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "AmplifyBackendTest",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        },
-        {
-          "category": "function",
-          "resourceName": "dashboardtestfunction",
+          "resourceName": "testfunction",
           "attributes": [
             "Name",
             "Arn"

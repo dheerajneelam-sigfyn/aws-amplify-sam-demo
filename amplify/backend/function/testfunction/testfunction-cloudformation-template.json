@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.12\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
+  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.13\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
   "Parameters": {
     "CloudWatchRule": {
       "Type": "String",
@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "AmplifyBackendTest",
+            "testfunction",
             {
               "Fn::Join": [
                 "",
                 [
-                  "AmplifyBackendTest",
+                  "testfunction",
                   "-",
                   {
                     "Ref": "env"
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "awsamplifysamdemoLambdaRole7ea6d54d",
+            "awsamplifysamdemoLambdaRole87f14bfc",
             {
               "Fn::Join": [
                 "",
                 [
-                  "awsamplifysamdemoLambdaRole7ea6d54d",
+                  "awsamplifysamdemoLambdaRole87f14bfc",
                   "-",
                   {
                     "Ref": "env"

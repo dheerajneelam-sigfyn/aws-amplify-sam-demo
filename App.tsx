@@ -5,8 +5,7 @@ import Amplify, { API } from "aws-amplify";
 import awsmobile from "./aws-exports";
 export default function App() {
   const apiName = "AmplifyBackEndTestAPI";
-  const path1 = "/hello";
-  const path2 = "/dashboard";
+  const path1 = "/test";
   const myInit = {
     headers: {},
   };
@@ -16,16 +15,6 @@ export default function App() {
   const [showResult, setShowResult] = useState(false);
   const getApiMessage = async () => {
     API.get(apiName, path1, myInit)
-      .then((response: any) => {
-        setApiMessage(response);
-        setShowResult(true);
-      })
-      .catch((error: any) => {
-        console.log(error.response);
-      });
-  };
-  const getDashboardMessage = async () => {
-    API.get(apiName, path2, myInit)
       .then((response: any) => {
         setApiMessage(response);
         setShowResult(true);
@@ -59,13 +48,6 @@ export default function App() {
         <Button
           onPress={() => getApiMessage()}
           title="Fetch Message"
-          color="#841584"
-        />
-      </View>
-      <View style={{ margin: 10 }}>
-        <Button
-          onPress={() => getDashboardMessage()}
-          title="Fetch Dashboard Message"
           color="#841584"
         />
       </View>
