@@ -9,7 +9,7 @@ export default function App() {
   const myInit = {
     headers: {},
   };
-  console.log('Test');
+  console.log('Test11');
   Amplify.configure(awsmobile);
   const [clicked, setClicked] = useState(0);
   const [apiMessage, setApiMessage]: any = useState();
